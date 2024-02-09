@@ -34,7 +34,7 @@
 	/>
 	{%- else -%}
 	<meta
-		content="{{ '/assets/img/touring.jpg' | absolute_url }}"
+		content="{{ '/assets/img/background.png' | absolute_url }}"
 		property="og:image"
 	/>
 	{%- endif -%}
@@ -61,7 +61,7 @@
 	{%- else -%}
 	<meta
 		name="twitter:image:src"
-		content="{{ '/assets/img/touring.jpg' | absolute_url }}"
+		content="{{ '/assets/img/background.png' | absolute_url }}"
 	/>
 	{%- endif -%}
 
@@ -81,6 +81,5 @@
 		href="{{ page.url | absolute_url | replace:'index.html','' }}"
 	/>
 
-	{%- if site.google_analytics -%} {%- include google_analytics.html -%} {%-
-	endif -%}
+
 </head>

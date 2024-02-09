@@ -1,5 +1,5 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS
+title: 'BSR 6806: Programming for Big Data Biomedicine'
+description:
 
 url: https://long-haul.netlify.app
 # Only necessary when hosting your site in a sub-directory. Project sites hosted on GitHub Pages are the common use-case of this variable.
@@ -23,19 +23,13 @@ navigation:
       url: /index.html
     - title: About
       url: /about
-    - title: Contact
-      url: /contact
 
 social:
-    github: brianmaierjr
-    twitter: brianmaierjr
-    facebook: brianmaierjr
-    email: brimaidesigns@gmail.com
-    linkedin: brianmaierjr
-    youtube: RickAstleyYT
-    tumblr: i-am-a-fish
+    github: MaayanLab
+    twitter: AviMaayan
+    email: avi.maayan@mssm.edu
+    linkedin: avi-ma-ayan-6a61271a
+    youtube: avimaayan
 
-google_analytics: "UA-58263416-1"
 
-disqus:
-    shortname: brianmaierjr
+

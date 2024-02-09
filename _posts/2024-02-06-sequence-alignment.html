@@ -1,0 +1,156 @@
+---
+layout: post
+title: "#1 Sequence Alignment"
+date: 2024-02-06
+description: This is a first quiz for the lecture BSR 6806 Programming for Big Data Biomedicine
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfzkY2p1bgssE3W3tZXgFVZjd5hTfD5B1msKSlLG4W7m_W1og/formResponse?"
+
+      $('#sendBtn').click(function() {
+        var data = {
+          "entry.1945349790": document.querySelector('input[name="entry.1945349790"]:checked').value || ""
+         };
+        
+         postToGoogle(googleURL, data);
+        
+      });
+
+      function postToGoogle(googleURL, data) {
+        $.ajax({
+          url: googleURL,
+          data: data,
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function() {
+              //Success message
+            },
+            200: function() {
+              //Success Message
+            }
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<div class="container">
+
+  <form id="quizForm">
+   
+    <div class="question">
+      <label class = "question_question" for="entry.1945349790">1. What is not a method of gene expression quantification?</label>
+      <div class="options">
+        <label for ="i9"><input type="radio" name="entry.1945349790" value="Affymetrix microarrays" checked> Affymetrix microarrays</label>
+        <label for ="i12"><input type="radio" name="entry.1945349790" value="L1000"> L1000</label>
+        <label for ="i15"><input type="radio" name="entry.1945349790" value="RNA-sequencing"> RNA-sequencing</label>
+        <label for ="i18"><input type="radio" name="entry.1945349790" value="Enrichment Analysis"> Enrichment Analysis</label>
+      </div>
+    </div>
+    <div class="question">
+      <label for="entry.1907753883" class = "question_question" >2. What is the correct order of the L1000 data processing pipeline?</label>
+      <div class="options">
+        <label for="i25"><input checked type="radio" name="entry.1907753883" value="Scan - Deconvolution - Normalization - Inference - Differential Expression - Signature"> Scan - Deconvolution - Normalization - Inference - Differential Expression - Signature</label>
+        <label for="i28"><input type="radio" name="entry.1907753883" value="Scan - Normalization - Deconvolution - Inference - Differential Expression - Signature"> Scan - Normalization - Deconvolution - Inference - Differential Expression - Signature</label>
+        <label for="i31"><input type="radio" name="entry.1907753883" value="Scan - Deconvolution - Inference - Normalization - Differential Expression - Signature"> Scan - Deconvolution - Inference - Normalization - Differential Expression - Signature</label>
+        <label for="i34"><input type="radio" name="entry.1907753883" value="Scan - Normalization - Inference - Deconvolution - Differential Expression - Signature"> Scan - Normalization - Inference - Deconvolution - Differential Expression - Signature</label>
+      </div>
+    </div>
+    <div class="question">
+      <label class = "question_question" for="entry.180810368">3. Protein synthesis occurs through two main stages: transcription and translation. What is not a Post-Transcriptional Modification?</label>
+      <div class="options">
+        <label for="i41"><input checked type="radio" name="entry.180810368" value="splicing to remove introns"> splicing to remove introns</label>
+        <label for="i44"><input type="radio" name="entry.180810368" value="polyadenylation"> polyadenylation</label>
+        <label for="i47"><input type="radio" name="entry.180810368" value="addition of a 5' cap"> addition of a 5' cap</label>
+        <label for="i50"><input type="radio" name="entry.180810368" value="splicing to remove exons"> splicing to remove exons</label>
+        <label for="i53"><input type="radio" name="entry.180810368" value="none of the above (this is correct, and somewhat a trick question)"> none of the above (this is correct, and somewhat a trick question)</label>
+      </div>
+    </div>
+    
+    <div class="question">
+      <label for="entry.514934831" class = "question_question">4. On which website can we find reference genomes and gene annotations?</label>
+      <div class="options">
+        <label for="i60"><input checked type="radio" name="entry.514934831" value="Ensembl"> Ensembl</label>
+        <label for="i63"><input type="radio" name="entry.514934831" value="GEO (Gene Expression Omnibus)"> GEO (Gene Expression Omnibus)</label>
+        <label for="i66"><input type="radio" name="entry.514934831" value="ARCHS4"> ARCHS4</label>
+        <label for="i69"><input type="radio" name="entry.514934831" value="GTEx portal"> GTEx portal</label>
+      </div>
+    </div>
+    <div class="question">
+      <label for="entry.555432948" class = "question_question">5. What are two RNA-seq algorithms presented in class that can be used from the Command Line Interface (CLI)?</label>
+      <div class="options">
+        <label for="i76"><input checked type="radio" name="entry.555432948" value="STAR, Bowtie"> STAR, Bowtie</label>
+        <label for="i79"><input type="radio" name="entry.555432948" value="STAR, Kallisto"> STAR, Kallisto</label>
+        <label for="i82"><input type="radio" name="entry.555432948" value="Bowtie, TopHat2"> Bowtie, TopHat2</label>
+        <label for="i85"><input type="radio" name="entry.555432948" value="Kallisto, Salmon"> Kallisto, Salmon</label>
+      </div>
+    </div>
+    
+    <div class="question" >
+      <label for="entry.1714289642" class = "question_question">6. Choose the correct description(s) of RNA-seq pseudo alignment.</label>
+      <div class="options">
+        <label for="i92"><input checked type="radio" name="entry.1714289642" value="Mapping"> Mapping reads to the position of a reference genome</label>
+        <label for="i95"><input type="radio" name="entry.1714289642" value="Ignores"> Ignores the actual position of the match</label>
+        <label for="i98"><input type="radio" name="entry.1714289642" value="Mapping needs"> Mapping needs to be aware of possible splicing regions</label>
+        <label for="i101"><input type="radio" name="entry.1714289642" value="Requires"> Requires efficient way to query genomic locations using suffix trees or suffix arrays</label>
+        <label for="i104"><input type="radio" name="entry.1714289642" value="Outputs"> Outputs a BAM file</label>
+      </div>
+    </div>
+    <div class="question">
+      <label for="entry.1414002448" class = "question_question">7. Choose an incorrect option on the Cell Ranger's output.</label>
+      <div class="options">
+        <label for="i111"><input checked type="radio" name="entry.1414002448" value="barcodes.tsv: Each line contains a barcode that was found to match with a cell"> barcodes.tsv: Each line contains a barcode that was found to match with a cell</label>
+        <label for="i114"><input type="radio" name="entry.1414002448" value="family.soft: Incorporate complete data and metadata for all Platform, Sample and Series records in the family."> family.soft: Incorporate complete data and metadata for all Platform, Sample and Series records in the family.</label>
+        <label for="i117"><input type="radio" name="entry.1414002448" value="features.tsv: Each row contains a gene identifier"> features.tsv: Each row contains a gene identifier</label>
+        <label for="i120"><input type="radio" name="entry.1414002448" value="matrix.mtx: Sparse matrix format containing the gene counts (gene, barcode/cell, count)"> matrix.mtx: Sparse matrix format containing the gene counts (gene, barcode/cell, count)</label>
+      </div>
+    </div>
+    
+    <div class="question">
+      <label for="entry.580803311" class = "question_question">8. You want to use Cell Ranger through the Command Line Interface. Choose the incorrect information.</label>
+      <div class="options">
+        <label for="127"><input checked type="radio" name="entry.580803311" value="Need to follow the file naming convention of the FASTQ file."> Need to follow the file naming convention of the FASTQ file.</label>
+        <label for="130"><input type="radio" name="entry.580803311" value="With 8 CPU cores and 32GB of memory, Cell Ranger performs the best."> With 8 CPU cores and 32GB of memory, Cell Ranger performs the best.</label>
+        <label for="i133"><input type="radio" name="entry.580803311" value="For the Sample parameter, we need to provide the prefix."> For the Sample parameter, we need to provide the prefix.</label>
+        <label for="i136"><input type="radio" name="entry.580803311" value="Cell Ranger expects paired-end reads."> Cell Ranger expects paired-end reads.</label>
+      </div>
+    </div>
+    <div class="question">
+      <label for="entry.919915025" class = "question_question">9. Choose the wrong description of ARCHS4.</label>
+      <div class="options">
+        <label for="i143"><input checked type="radio" name="entry.919915025" value="Processing pipelines are Dockerized for easy deployment from a resource pool"> Processing pipelines are Dockerized for easy deployment from a resource pool</label>
+        <label for="i146"><input type="radio" name="entry.919915025" value="Control server hosting job commands serve job descriptions upon request of worker nodes via API"> Control server hosting job commands serve job descriptions upon request of worker nodes via API</label>
+        <label for="i149"><input type="radio" name="entry.919915025" value="Job descriptions are in XMT format."> Job descriptions are in XMT format.</label>
+        <label for="i152"><input type="radio" name="entry.919915025" value="Results are stored at an online location accessible via URL"> Results are stored at an online location accessible via URL</label>
+      </div>
+    </div>
+    
+    <div class="question">
+      <label for="entry.921246481" class = "question_question">10. What are the benefits of ARCHS4?</label>
+      <div class="options">
+        <label for="i159"><input checked type="radio" name="entry.921246481" value="Cost-effective and elastic RNA-seq alignment infrastructure accomplished on the cloud"> Cost-effective and elastic RNA-seq alignment infrastructure accomplished on the cloud</label>
+        <label for="i162"><input type="radio" name="entry.921246481" value="Users can access gene and transcript counts uniformly processed from all human and mouse data in GEO"> Users can access gene and transcript counts uniformly processed from all human and mouse data in GEO</label>
+        <label for="i165"><input type="radio" name="entry.921246481" value="A 3D interactive viewer computed with t-SNE is provided"> A 3D interactive viewer computed with t-SNE is provided</label>
+        <label for="i168"><input type="radio" name="entry.921246481" value="Users can search and browse the data by metadata enhanced annotations and can submit their own gene sets for search"> Users can search and browse the data by metadata enhanced annotations and can submit their own gene sets for search</label>
+        <label for="i172"><input type="radio" name="entry.921246481" value="All of above"> All of above</label>
+      </div>
+    </div>
+    
+    
+    <button type="button" class="submit-btn" id="sendBtn">Submit</button>
+  </form>
+</div>
+</body>
+</html>

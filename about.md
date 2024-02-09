@@ -1,24 +1,34 @@
 ---
 layout: default
-title: About Long Haul
+title: Lecture by Ma'ayan Lab
 ---
 
-<div class="post">
-	<h1 class="pageTitle">About Long Haul</h1>
-	<img src="{{ '/assets/img/touring.jpg' | relative_url }}" alt="">
-	<p class="intro">Long Haul is a minimal, long form <a href="http://jekyllrb.com">Jekyll</a> Theme. It can be used as is or customized to your hearts desire.</p>
-	<p>Long Haul was created in honor of all the hard working touring bicycles that have traversed the globe time and time again. Take it for a spin.</p>
-	<h2>Features</h2>
-	<ul>
-		<li>Built with the <a href="https://github.com/jekyll/jekyll-sass-converter">Jekyll SASS convertor</a> plugin</li>
-  		<li>SVG Social Icons from <a href="http://customizr.net/icons/">Customizr</a></li>
-  		<li><a href="http://responsive-nav.com/">Responsive Nav Menu</a></li>
-  		<li><a href="https://github.com/snaptortoise/jekyll-rss-feeds">XML Feed for RSS Readers</a></li>
-  		<li>Contact Form via <a href="http://formspree.io/">Formspree</a></li>
-      <li>5 Post Loop with excerpt on Home Page</li>
-  		<li>Previous / Next Post Navigation</li>
-      <li>Estimated Reading Time for posts</li>
-  		<li><a href="https://github.com/adobe-webplatform/dropcap.js">Drop Cap</a> on posts</li>
-  		<li><a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography">A Better Type Scale</a></li>
-  	</ul>
+<div class="">
+	<h3 class="pageTitle">About the Lecture</h3>
+	<h4> Course Director</h4>
+	<div class="intro_container">
+		<div class="image-container">
+		<img src="https://labs.icahn.mssm.edu/maayanlab/wp-content/uploads/sites/75/2014/10/a_maayan_wide.png">
+		</div>
+		<div class="column">
+		<ul class="intro">
+	<li><h4>Avi Ma’ayan PhD</h4></li>
+	<li>Mount Sinai Endowed Professor in Bioinformatics</li>
+<li>Center Director, Mount Sinai Center for Bioinformatics</li>
+<li>Professor, Department of Pharmacological Sciences</li>
+<li>Professor, Department of Artificial Intelligence and Human Health</li>
+
+<li>E-mail: avi.maayan@mssm.edu</li>
+</ul>
+		</div>
+		</div>
+		<div style="margin-top: 50px;">
+		<h4> Course Description</h4>
+	<p class="intro">The course covers computational methodologies applied to analyze data in the broad fields of
+bioinformatics and big data science. Topics covered include RNA-seq and proteomics data analysis, Machine
+Learning, Python, cloud computing, data visualization, network analysis, full stack deployment, version control,
+Knowledge Graphs, and database programming. Students will be required to complete small programming
+assignments throughout the course. The course will use Jupyter Notebooks and Appyters to run most tutorials.</p>
+	</div>
+
 </div>

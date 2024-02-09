@@ -1,0 +1,74 @@
+---
+layout: post
+title: "#3 Normalization"
+date: 2024-02-08
+description: Coming Soon
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfzkY2p1bgssE3W3tZXgFVZjd5hTfD5B1msKSlLG4W7m_W1og/formResponse?"
+
+      $('#sendBtn').click(function() {
+        var data = {
+          "entry.1945349790": document.querySelector('input[name="entry.1945349790"]:checked').value || "",
+        };
+        window.location.href = "/thankyou/";
+        postToGoogle(formURL, data);
+      });
+
+      function postToGoogle(googleURL, data) {
+        $.ajax({
+          url: googleURL,
+          data: data,
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function() {
+              //Success message
+            },
+            200: function() {
+              //Success Message
+            }
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<div class="container">
+
+  <form id="quizForm">
+    <div class="question">
+      Comming Soon
+      <!-- <label for="entry.1945349790">1. What is not a method of gene expression quantification?</label>
+      <div class="options">
+        <label for ="i5"><input type="radio" name="entry.1945349790" value="Affymetrix microarrays"> Affymetrix microarrays</label>
+        <label for ="i8"><input type="radio" name="entry.1945349790" value="L1000"> L1000</label>
+        <label for ="i11"><input type="radio" name="entry.1945349790" value="RNA-sequencing"> RNA-sequencing</label>
+        <label for ="i14"><input type="radio" name="entry.1945349790" value="Enrichment Analysis"> Enrichment Analysis</label>
+      </div>
+    </div>
+    <div class="question">
+      <label>2. What is the correct order of the L1000 data processing pipeline?</label>
+      <div class="options">
+        <label><input type="radio" name="question2" value="Scan - Deconvolution - Normalization - Inference - Differential Expression - Signature"> Scan - Deconvolution - Normalization - Inference - Differential Expression - Signature</label>
+        <label><input type="radio" name="question2" value="Scan - Normalization - Deconvolution - Inference - Differential Expression - Signature"> Scan - Normalization - Deconvolution - Inference - Differential Expression - Signature</label>
+        <label><input type="radio" name="question2" value="Scan - Deconvolution - Inference - Normalization - Differential Expression - Signature"> Scan - Deconvolution - Inference - Normalization - Differential Expression - Signature</label>
+        <label><input type="radio" name="question2" value="Scan - Normalization - Inference - Deconvolution - Differential Expression - Signature"> Scan - Normalization - Inference - Deconvolution - Differential Expression - Signature</label>
+      </div>
+    </div> -->
+    <button type="button" class="submit-btn" id="sendBtn">Submit</button>
+  </form>
+</div>
+</body>
+</html>

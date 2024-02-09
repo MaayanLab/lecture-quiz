@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Long Haul
+title: Lecture by Ma'ayan Lab
 ---
 
 <div class="home" id="home">
-	<h1 class="pageTitle">Recent Posts</h1>
+	<h3 class="pageTitle">Quiz</h3>
 	<div class="posts noList">
-		{%- for post in paginator.posts -%}
+		{%- for post in paginator.posts reversed -%}
 		<article>
 			<span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
 			<h3>

@@ -79,6 +79,9 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
                 "entry.580803311": document.querySelector('input[name="entry.580803311"]:checked').value || "",
                 "entry.919915025": document.querySelector('input[name="entry.919915025"]:checked').value || "",
                 "entry.921246481": document.querySelector('input[name="entry.921246481"]:checked').value || ""
+              
+
+               
               };
               postToGoogle(formURL, data); 
             });
@@ -106,7 +109,7 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
         <div class="container">
           <form id="quizForm">
             <div>
-              <input class="w3-input" type="text" name="entry.586303516" required>
+              <input class="w3-input" type="text" name="entry.586303516" vlaue="Jane Doe" required>
               <label>Name*</label>
               </div>
             <div class="question">
@@ -188,10 +191,10 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
             <div class="question">
               <label for="entry.580803311" class = "question_question">8. You want to use Cell Ranger through the Command Line Interface. Choose the incorrect information.</label>
               <div class="options">
-                <label for="127"><input checked type="radio" name="entry.580803311" value="Need to follow the file naming convention of the FASTQ file."> Need to follow the file naming convention of the FASTQ file.</label>
-                <label for="130"><input type="radio" name="entry.580803311" value="With 8 CPU cores and 32GB of memory, Cell Ranger performs the best."> With 8 CPU cores and 32GB of memory, Cell Ranger performs the best.</label>
-                <label for="i133"><input type="radio" name="entry.580803311" value="For the Sample parameter, we need to provide the prefix."> For the Sample parameter, we need to provide the prefix.</label>
-                <label for="i136"><input type="radio" name="entry.580803311" value="Cell Ranger expects paired-end reads."> Cell Ranger expects paired-end reads.</label>
+                <label for="127"><input checked type="radio" name="entry.580803311" value="FASTQ file"> Need to follow the file naming convention of the FASTQ file.</label>
+                <label for="130"><input type="radio" name="entry.580803311" value="With 8 CPU"> With 8 CPU cores and 32GB of memory, Cell Ranger performs the best.</label>
+                <label for="i133"><input type="radio" name="entry.580803311" value="prefix"> For the Sample parameter, we need to provide the prefix.</label>
+                <label for="i136"><input type="radio" name="entry.580803311" value="paired-end"> Cell Ranger expects paired-end reads.</label>
               </div>
             </div>
 

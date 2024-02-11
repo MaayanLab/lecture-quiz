@@ -4,8 +4,8 @@ description:
 url: https://long-haul.netlify.app
 # Only necessary when hosting your site in a sub-directory. Project sites hosted on GitHub Pages are the common use-case of this variable.
 baseurl: # Ex: /project-page
-paginate_path: "blog/page:num/"
-permalink: blog/:title/
+paginate_path: "quiz/page:num/"
+permalink: quiz/:title/
 
 # Header Option
 # header: large

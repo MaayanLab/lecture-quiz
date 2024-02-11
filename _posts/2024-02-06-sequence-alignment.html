@@ -83,6 +83,8 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
 
                
               };
+
+              window.location.href = "/thankyou/";
               postToGoogle(formURL, data); 
             });
         
@@ -108,9 +110,9 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         <div class="container">
           <form id="quizForm">
-            <div>
-              <input class="w3-input" type="text" name="entry.586303516" vlaue="Jane Doe" required>
-              <label>Name*</label>
+            <div class ="question">
+              
+              <label class = "question_question">Name*</label> <input class="w3-input" type="text" name="entry.586303516" required>
               </div>
             <div class="question">
               <label class="question_question" for="entry.1945349790">1. What is not a method of gene expression quantification?</label>

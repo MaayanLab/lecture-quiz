@@ -82,16 +82,24 @@ body {
 	font-size:20px;
 	font-weight:bold;
   }
+
+  .options {
+    display: block;
+    align-items: center; /* Vertically center the items */
+	
+}
   .options label {
 
 	display: block;
 	margin: 15px 0px;
 	font-size: 18px;
+	
   }
   .options input[type="radio"] {
 	margin-right: 5px;
 
   }
+  
   .submit-btn {
 	display: block;
 	margin-top: 20px;

@@ -10,7 +10,7 @@ The page is deployed using Git Pages and accessible though https://maayanlab.git
 4. Run Jekyll Serve and Watch command`bundle exec jekyll serve -w`
 
 
-This repo used ![Long-Haul](https://github.com/brianmaierjr/long-haul) as a template. 
+This repo used [Long-Haul](https://github.com/brianmaierjr/long-haul) as a template. 
 ## License
 
 This is [MIT](LICENSE) with no added caveats, so feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.

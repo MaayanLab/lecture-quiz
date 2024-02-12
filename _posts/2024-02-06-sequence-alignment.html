@@ -4,55 +4,7 @@ title: "#1 Sequence Alignment"
 date: 2024-02-06
 description: This is a first quiz for the lecture BSR 6806 Programming for Big Data Biomedicine
 ---
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfzkY2p1bgssE3W3tZXgFVZjd5hTfD5B1msKSlLG4W7m_W1og/formResponse?"
-
-      $('#sendBtn').click(function() {
-        var data = {
-          "entry.1945349790": document.querySelector('input[name="entry.1945349790"]:checked').value || ""
-         };
-        
-         postToGoogle(googleURL, data); 
-      });
-
-      function postToGoogle(googleURL, data) {
-        $.ajax({
-          url: googleURL,
-          data: data,
-          type: "POST",
-          dataType: "xml",
-          statusCode: {
-            0: function() {
-              //Success message
-            },
-            200: function() {
-              //Success Message
-            }
-          }
-        });
-      }
-    });
-  </script>
-</head>
-<body>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-<div class="container">
-
-  <form id="quizForm">
-   
-    <div class="question">
-      <label class = "question_question" for="entry.1945349790">1. What is not a method of gene expression quantification?</label>
-      <div class="options">
-        <label for ="i9"><input type="radio" name="entry.1945349790" value="Affymetrix microarrays" checked> Affymetrix microarrays</label> -->
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -84,8 +36,9 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
                
               };
 
-              window.location.href = "/lecture-quiz/thankyou/";
+            
               postToGoogle(formURL, data); 
+              window.location.href = "/lecture-quiz/thankyou/";
             });
         
             function postToGoogle(googleURL, data) {
@@ -103,6 +56,7 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
                   }
                 }
               });
+              
             }
           });
         </script>
@@ -222,7 +176,7 @@ description: This is a first quiz for the lecture BSR 6806 Programming for Big D
                 <label for="i162"><input type="radio" name="entry.921246481" value="Users can access gene and transcript counts uniformly processed from all human and mouse data in GEO"> Users can access gene and transcript counts uniformly processed from all human and mouse data in GEO</label>
                 <label for="i165"><input type="radio" name="entry.921246481" value="A 3D interactive viewer computed with t-SNE is provided"> A 3D interactive viewer computed with t-SNE is provided</label>
                 <label for="i168"><input type="radio" name="entry.921246481" value="Users can search and browse the data by metadata enhanced annotations and can submit their own gene sets for search"> Users can search and browse the data by metadata enhanced annotations and can submit their own gene sets for search</label>
-                <label for="i172"><input type="radio" name="entry.921246481" value="All of above"> All of above</label>
+                <label for="i171"><input type="radio" name="entry.921246481" value="All of above"> All of above</label>
               </div>
             </div>
             <button type="submit" class="submit-btn" id="sendBtn">Submit</button>

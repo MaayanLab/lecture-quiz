@@ -6,7 +6,7 @@ title: Lecture by Ma'ayan Lab
 <div class="home" id="home">
 	<h3 class="pageTitle">Quiz</h3>
 	<div class="posts noList">
-		{%- for post in paginator.posts reversed -%}
+		{%- for post in paginator.posts -%}
 		<article>
 			<span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
 			<h3>

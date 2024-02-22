@@ -1,29 +1,39 @@
 ---
 layout: post
 title: "#3 Normalization"
-date: 2024-02-18
-description: Coming Soon
+date: 2024-02-22
+description: This is the quiz for the normalization class
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeICOScZgOOcaYCtKtrLNgvgUBz-wJ_BkH2Oq42-wZhlnxImg/formResponse?"
 
-      $('#sendBtn').click(function() {
+      $('#sendBtn').click(function () {
         var data = {
-    
-          
-          
+          "entry.1700547350": document.querySelector('input[name="entry.1700547350"]').value || "",
+          "entry.784732873": document.querySelector('input[name="entry.784732873"]:checked').value || "",
+          "entry.1250223287": document.querySelector('input[name="entry.1250223287"]:checked').value || "",
+          "entry.18491135": document.querySelector('input[name="entry.18491135"]:checked').value || "",
+          "entry.1664458886": document.querySelector('input[name="entry.1664458886"]:checked').value || "",
+          "entry.2087348529": document.querySelector('input[name="entry.2087348529"]:checked').value || "",
+          "entry.1825897651": document.querySelector('input[name="entry.1825897651"]:checked').value || "",
+          "entry.1115648688": document.querySelector('input[name="entry.1115648688"]:checked').value || "",
+          "entry.1425319942": document.querySelector('input[name="entry.1425319942"]:checked').value || "",
+          "entry.1162711090": document.querySelector('input[name="entry.1162711090"]:checked').value || "",
+          "entry.1153982229": document.querySelector('input[name="entry.1153982229"]:checked').value || "",
         };
-        
+
         postToGoogle(formURL, data);
+
       });
 
       function postToGoogle(googleURL, data) {
@@ -33,31 +43,226 @@ description: Coming Soon
           type: "POST",
           dataType: "xml",
           statusCode: {
-            0: function() {
+            0: function () {
               //Success message
             },
-            200: function() {
+            200: function () {
               //Success Message
             }
           }
         });
+
       }
+      function redirectToThankYou() {
+        window.location.href = "/lecture-quiz/thankyou/";
+      }
+
     });
   </script>
 </head>
+
 <body>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
   <div class="container">
     <form id="quizForm">
-      <div class ="question">
-        
-        Comming Soon
+      <div class="question">
+
+        <label class="question_question">Name*</label> <input class="w3-input" type="text" name="entry.1700547350"
+          required>
+      </div>
+      <div class="question">
+        <label class="question_question" for="entry.784732873" required>1. Choose an <u>incorrect</u> statement about
+          data normalization.</label>
+        <div class="options">
+
+
+          <label for="i9"><input type="radio" id="i9" name="entry.784732873" value="Normalization can" >Normalization can remove technical biases from the data
+          </label>
+
+          <label for="i12"><input type="radio" id="i12" name="entry.784732873" value="Skewness within">Skewness within the data is usually helpful for extracting meaningful insights
+          </label>
+
+          <label for="i15"><input type="radio" id="i15" name="entry.784732873" value="Normalization should">Normalization should preserve the biological features of the data
+          </label>
+
+          <label for="i18"><input type="radio" id="i18" name="entry.784732873" value="Downstream analysis">Downstream analysis steps such as clustering, differential expression, and enrichment analysis can be negatively affected if applied to unnormalized data
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.1250223287" class="question_question" required>2. What is <u>not</u> a method for performing data
+          normalization? </label>
+        <div class="options">
+          <label for="i25"><input type="radio" name="entry.1250223287" value="Z-Scoring">Z-Scoring</label>
+          <label for="i28"><input type="radio" name="entry.1250223287" value="Quantile Normalization">Quantile
+            Normalization
+          </label>
+          <label for="i31"><input type="radio" name="entry.1250223287" value="Median Polish">Median Polish</label>
+          <label for="i34"><input type="radio" name="entry.1250223287" value="Affymetrix genechip">Affymetrix
+            Genechip</label>
+          <label for="i37"><input type="radio" name="entry.1250223287" value="Log transformation">Log
+            Transformation</label>
+        </div>
+      </div>
+      <div class="question">
+        <label class="question_question" for="entry.18491135" required>3. After visualizing the original data shown in
+          the histogram on the left (A), a researcher normalized the data to obtain the histogram on the right (B).
+          Which normalization technique is the most likely to have been used in this process? </label>
+        <div>
+          <img src="/assets/img/normalization-3.png">
+        </div>
+        <div class="options">
+          <label for="i44"><input type="radio" name="entry.18491135" value="Log Transformation">Log Transformation</label>
+          <label for="i47"><input type="radio" name="entry.18491135" value="Z-Scoring">Z-Scoring</label>
+          <label for="i50"><input type="radio" name="entry.18491135" value="Quantile Normalization">Quantile
+            Normalization</label>
+          <label for="i53"><input type="radio" name="entry.18491135" value="Median Polish">Median Polish</label>
+        </div>
+      </div>
+      <div class="question">
+        <label for="entry.1664458886" class="question_question" required>4. Select the <u>incorrect</u> description of the
+          Median Polish method. </label>
+        <div class="options">
+          <label for="i60"><input type="radio" name="entry.1664458886" value="Establish">Establishes an additive model
+            for a two-way distribution</label>
+          <label for="i63"><input type="radio" name="entry.1664458886" value="Done by">Done by iteratively finding the
+            overall, row, and column factors contributing to each value
+          </label>
+          <label for="i66"><input type="radio" name="entry.1664458886" value="Iteration">Iteration ends when residuals
+            are minimized</label>
+          <label for="i69"><input type="radio" name="entry.1664458886" value="To obtain">To obtain the best results, it
+            is preferable to have as many iterations as possible </label>
+        </div>
+      </div>
+      <div class="question">
+        <label for="entry.2087348529" class="question_question" required>5. Choose the <u>incorrect</u> statement about RNA-Seq
+          gene count normalization methods.
+        </label>
+
+        <div class="options">
+          <label for="i76"><input type="radio" name="entry.2087348529" value="RPKM">RPKM: Accounts for differences in
+            gene length and read depth, useful for gene comparison across samples</label>
+          <label for="i79"><input type="radio" name="entry.2087348529" value="FPKM">FPKM: Accounts for the quality of
+            gene-gene co-expression correlation networks</label>
+          <label for="i82"><input type="radio" name="entry.2087348529" value="CPM">CPM: Account for read depth, useful
+            for comparison between replicates</label>
+          <label for="i85"><input type="radio" name="entry.2087348529" value="TPM">TPM: Account for gene length and read
+            depth, useful for gene comparison across samples
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.1825897651" class="question_question" required>6. Select the <u>incorrect</u> statement about Z-score
+          normalization.
+        </label>
+
+        <div class="options">
+          <label for="i92"><input type="radio" name="entry.1825897651" value="It calculates">It calculates the standard
+            score using series mean and series standard deviation of each data point
+          </label>
+          <label for="i95"><input type="radio" name="entry.1825897651" value="mean of 0">As a result of Z-scoring, the
+            distribution will have a mean of 0 and a standard deviation of 1
+          </label>
+          <label for="i98"><input type="radio" name="entry.1825897651" value="mean of 1">As a result of Z-scoring, the
+            distribution will have a mean of 1 and a standard deviation of 0
+          </label>
+          <label for="i101"><input type="radio" name="entry.1825897651" value="Each value">Each value is represented as
+            the number of standard deviations away from the series’ mean.
+
+          </label>
+        </div>
+      </div>
+      <div class="question">
+        <label for="entry.1115648688" class="question_question" required>7. The image below represents the last step in
+          the process of quantile normalization. Select the appropriate values to fill in the empty boxes.
+        </label>
+        <div>
+          <img src="/assets/img/normalization-7.png">
+        </div>
+
+        <div class="options">
+          <label for="i108"><input type="radio" name="entry.1115648688" value="385">(A): 3, (B): 8, (C): 5
+          </label>
+          <label for="i111"><input type="radio" name="entry.1115648688" value="365">(A): 3, (B): 6, (C): 5
+          </label>
+          <label for="i114"><input type="radio" name="entry.1115648688" value="468">(A): 4, (B): 6, (C): 5
+          </label>
+          <label for="i117"><input type="radio" name="entry.1115648688" value="458">(A): 4, (B): 5, (C): 8
+          </label>
+        </div>
+      </div>
+      <div class="question">
+        <label for="entry.1425319942" class="question_question" required>8. The tables below show an example of the
+          process of gene count normalization from original counts to RPKM/FPKM. Select the appropriate values to fill
+          in the empty spaces. The processed tables are divided by reads per ten.
+
+        </label>
+        <div>
+          <img src="/assets/img/normalization-8.png">
+        </div>
+        <div class="options">
+          <label for="i124"><input type="radio" name="entry.1425319942" value="1CPM">(A): 1kb, (B): CPM, (C): 1.43
+          </label>
+          <label for="i127"><input type="radio" name="entry.1425319942" value="10TPM">(A): 10kb, (B): TPM, (C): 2.86
+          </label>
+          <label for="i130"><input type="radio" name="entry.1425319942" value="1Zscore">(A): 1kb, (B): Z-score, (C): 1.43
+          </label>
+          <label for="i133"><input type="radio" name="entry.1425319942" value="10CPM">(A): 10kb, (B): CPM, (C): 1.42
+          </label>
+        </div>
+      </div>
+      <div class="question">
+        <label for="entry.1162711090" class="question_question" required>9. Select the <u>incorrect</u> statement about the
+          DESeq2 normalization method.
+        </label>
+
+        <div class="options">
+          <label for="i140"><input type="radio" name="entry.1162711090" value="method uses">The DESeq2 normalization
+            method uses the median of ratios method to normalize counts between samples to prepare the data for
+            differential expression analysis
+          </label>
+          <label for="i143"><input type="radio" name="entry.1162711090" value="widely used">The DESeq2 library is ​​a
+            widely used package for the analysis of microarray data
+          </label>
+          <label for="i146"><input type="radio" name="entry.1162711090" value="method finds">The DESeq2 normalization
+            method finds scaling factors for each sample accounting for differences in library size and composition
+          </label>
+          <label for="i149"><input type="radio" name="entry.1162711090" value="method accounts">The DESeq2 normalization
+            method accounts for genes with zero counts and downplays genes that soak up many reads
+
+          </label>
+        </div>
+      </div>
+      <div class="question">
+        <label for="entry.1153982229" class="question_question" required>10. Select the <u>correct</u> description of
+          single-cell RNA-seq UMI.
+
+        </label>
+
+        <div class="options">
+          <label for="i156"><input type="radio" name="entry.1153982229" value="Single-cel">Single-cell RNA-seq UMI
+            counts are mostly 1
+          </label>
+          <label for="i159"><input type="radio" name="entry.1153982229" value="UMI counts">UMI counts display a
+            continuous value distribution because UMI counts are predominantly in the range between 10 and 1000 counts
+          </label>
+          <label for="i162"><input type="radio" name="entry.1153982229" value="Continuous">Continuous values are
+            difficult to normalize for library size compared to discrete value distributions.
+          </label>
+          <label for="i165"><input type="radio" name="entry.1153982229" value="UMI distribution">UMI distribution
+            typically fits a negative binomial distribution, and sometimes a zero-inflated model is used to model the
+            observed distributions
+          </label>
+        </div>
       </div>
       <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
-      </form>
-      </div>
+    </form>
+  </div>
 
 
 
 </body>
+
 </html>

@@ -31,10 +31,10 @@ description: This is the quiz for the normalization class
           "entry.1162711090": document.querySelector('input[name="entry.1162711090"]:checked').value || "",
           "entry.1153982229": document.querySelector('input[name="entry.1153982229"]:checked').value || "",
         };
-        redirectToThankYou();
-        postToGoogle(formURL, data);
-        
 
+
+        postToGoogle(formURL, data);
+        setTimeout(redirectToThankYou, 1000);
       });
 
       function postToGoogle(googleURL, data) {
@@ -52,9 +52,9 @@ description: This is the quiz for the normalization class
             }
           }
         });
-
       }
       function redirectToThankYou() {
+        console.log("redirect")
         window.location.href = "/lecture-quiz/thankyou/";
       }
 

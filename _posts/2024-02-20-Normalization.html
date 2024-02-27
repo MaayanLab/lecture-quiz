@@ -15,54 +15,55 @@ description: This is the quiz for the normalization class
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
-      var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeICOScZgOOcaYCtKtrLNgvgUBz-wJ_BkH2Oq42-wZhlnxImg/formResponse?"
+  $(document).ready(function () {
+    var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeICOScZgOOcaYCtKtrLNgvgUBz-wJ_BkH2Oq42-wZhlnxImg/formResponse?"
 
-      $('#quizForm').submit(function (event) {
-        var data = {
-          "entry.1700547350": document.querySelector('input[name="entry.1700547350"]').value || "",
-          "entry.784732873": document.querySelector('input[name="entry.784732873"]:checked').value || "",
-          "entry.1250223287": document.querySelector('input[name="entry.1250223287"]:checked').value || "",
-          "entry.18491135": document.querySelector('input[name="entry.18491135"]:checked').value || "",
-          "entry.1664458886": document.querySelector('input[name="entry.1664458886"]:checked').value || "",
-          "entry.2087348529": document.querySelector('input[name="entry.2087348529"]:checked').value || "",
-          "entry.1825897651": document.querySelector('input[name="entry.1825897651"]:checked').value || "",
-          "entry.1115648688": document.querySelector('input[name="entry.1115648688"]:checked').value || "",
-          "entry.1425319942": document.querySelector('input[name="entry.1425319942"]:checked').value || "",
-          "entry.1162711090": document.querySelector('input[name="entry.1162711090"]:checked').value || "",
-          "entry.1153982229": document.querySelector('input[name="entry.1153982229"]:checked').value || "",
-        };
+    $('#quizForm').submit(function (event) {
+      event.preventDefault(); 
+      var data = {
+        "entry.1700547350": document.querySelector('input[name="entry.1700547350"]').value || "",
+        "entry.784732873": document.querySelector('input[name="entry.784732873"]:checked').value || "",
+        "entry.1250223287": document.querySelector('input[name="entry.1250223287"]:checked').value || "",
+        "entry.18491135": document.querySelector('input[name="entry.18491135"]:checked').value || "",
+        "entry.1664458886": document.querySelector('input[name="entry.1664458886"]:checked').value || "",
+        "entry.2087348529": document.querySelector('input[name="entry.2087348529"]:checked').value || "",
+        "entry.1825897651": document.querySelector('input[name="entry.1825897651"]:checked').value || "",
+        "entry.1115648688": document.querySelector('input[name="entry.1115648688"]:checked').value || "",
+        "entry.1425319942": document.querySelector('input[name="entry.1425319942"]:checked').value || "",
+        "entry.1162711090": document.querySelector('input[name="entry.1162711090"]:checked').value || "",
+        "entry.1153982229": document.querySelector('input[name="entry.1153982229"]:checked').value || "",
+      };
 
 
-        postToGoogle(formURL, data);
-        console.log('form submitted');
-        setTimeout(redirectToThankYou, 1000);
-        console.log('redirected')
-      });
-
-      function postToGoogle(googleURL, data) {
-        $.ajax({
-          url: googleURL,
-          data: data,
-          type: "POST",
-          dataType: "xml",
-          statusCode: {
-            0: function () {
-              //Success message
-            },
-            200: function () {
-              //Success Message
-            }
-          }
-        });
-      }
-      function redirectToThankYou() {
-        console.log("redirect")
-        window.location.href = "/lecture-quiz/thankyou/";
-      }
-
+      postToGoogle(formURL, data);
+      console.log('form submitted');
+      setTimeout(redirectToThankYou, 1000);
+     
     });
-  </script>
+
+    function postToGoogle(googleURL, data) {
+      $.ajax({
+        url: googleURL,
+        data: data,
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+          0: function () {
+            //Success message
+          },
+          200: function () {
+            //Success Message
+          }
+        }
+      });
+    }
+    function redirectToThankYou() {
+      console.log("redirect")
+      window.location.href = "/lecture-quiz/thankyou/";
+    }
+
+  });
+</script>
 
 
 <body>

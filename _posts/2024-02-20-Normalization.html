@@ -11,13 +11,14 @@ description: This is the quiz for the normalization class
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
+  <title>#3 Normalization </title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
     $(document).ready(function () {
       var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeICOScZgOOcaYCtKtrLNgvgUBz-wJ_BkH2Oq42-wZhlnxImg/formResponse?"
 
-      $('#sendBtn').click(function () {
+      $('#quizForm').submit(function (event) {
         var data = {
           "entry.1700547350": document.querySelector('input[name="entry.1700547350"]').value || "",
           "entry.784732873": document.querySelector('input[name="entry.784732873"]:checked').value || "",
@@ -34,7 +35,9 @@ description: This is the quiz for the normalization class
 
 
         postToGoogle(formURL, data);
+        console.log('form submitted');
         setTimeout(redirectToThankYou, 1000);
+        console.log('redirected')
       });
 
       function postToGoogle(googleURL, data) {

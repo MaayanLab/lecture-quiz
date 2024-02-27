@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "#2 Clustering Algorithms"
-date: 2025-02-19
+date: 2024-02-19
 description: This is the quiz for the clustering algorithms class
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +15,10 @@ description: This is the quiz for the clustering algorithms class
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSf8AUnprRqOqTECaHO3mx257QjbxGCObLTtvnghe4Oj8DCiWQ/formResponse?"
 
-    $('#quizForm').submit(function(event) {
+    $('#quizForm').submit(function (event) {
       event.preventDefault(); // Prevent the default form submission
       var data = {
         "entry.1182564640": document.querySelector('input[name="entry.1182564640"]').value || "",
@@ -31,11 +32,11 @@ description: This is the quiz for the clustering algorithms class
         "entry.224184375": document.querySelector('input[name="entry.224184375"]:checked').value || "",
         "entry.1499429502": document.querySelector('input[name="entry.1499429502"]:checked').value || "",
         "entry.452909550": document.querySelector('input[name="entry.452909550"]:checked').value || "",
-      
+
       };
 
-      
-      postToGoogle(formURL, data); 
+
+      postToGoogle(formURL, data);
       setTimeout(redirectToThankYou, 1000);
     });
 
@@ -46,162 +47,210 @@ description: This is the quiz for the clustering algorithms class
         type: "POST",
         dataType: "xml",
         statusCode: {
-          0: function() {
+          0: function () {
             //Success message
           },
-          200: function() {
+          200: function () {
             //Success Message
           }
         }
       });
     }
     function redirectToThankYou() {
-  window.location.href = "/lecture-quiz/thankyou/";
-}
+      window.location.href = "/lecture-quiz/thankyou/";
+    }
   });
 </script>
+
 <body>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-<div class="container">
-  <form id="quizForm">
-    <div class ="question">
-      
-      <label class = "question_question">Name*</label> <input class="w3-input" type="text" name="entry.1182564640" required>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  <div class="container">
+    <form id="quizForm">
+      <div class="question">
+
+        <label class="question_question">Name*</label> <input class="w3-input" type="text" name="entry.1182564640"
+          required>
       </div>
-    <div class="question">
-      <label class="question_question" for="entry.761249406" required>1. Choose an incorrect statement about why we use clustering analysis to interpret biological data.</label>
-      <div class="options">
-        
-          
+      <div class="question">
+        <label class="question_question" for="entry.761249406" required>1. Choose an incorrect statement about why we
+          use clustering analysis to interpret biological data.</label>
+        <div class="options">
+
+
           <label for="i9">
-            <input type="radio" id="i9" name="entry.761249406" value="High Dimensionality" >High Dimensionality of data
+            <input type="radio" id="i9" name="entry.761249406" value="High Dimensionality">High Dimensionality of data
+          </label>
+
+          <label for="i12">
+            <input type="radio" id="i12" name="entry.761249406" value="Data points">Data points are interrelated
+          </label>
+
+          <label for="i15">
+            <input type="radio" id="i15" name="entry.761249406" value="Need to">Need to quantify the relatedness of data
+            points
+          </label>
+
+          <label for="i18">
+
+            <input type="radio" id="i18" name="entry.761249406" value="To categorize">To categorize genes or proteins
+            based on their physical location within the cell
+
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.1494109199" class="question_question">2. Which Machine Learning method does clustering
+          analysis?</label>
+        <div class="options">
+          <label for="i25"><input type="radio" name="entry.1494109199" value="Unsupervised learning"> Unsupervised
+            learning</label>
+          <label for="i28"><input type="radio" name="entry.1494109199" value="Semi-supervised learning"> Semi-supervised
+            learning</label>
+          <label for="i31"><input type="radio" name="entry.1494109199" value="Reinforcement learning">Reinforcement
+            learning </label>
+          <label for="i34"><input type="radio" name="entry.1494109199" value="Supervised learning">Supervised learning
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.708468099" class="question_question">3. Choose the incorrect statement about hierarchical
+          clustering and partitioning clustering.
         </label>
-        
-        <label for="i12">
-          <input type="radio" id="i12" name="entry.761249406" value="Data points">Data points are interrelated
+        <div class="options">
+          <label for="i41"><input type="radio" name="entry.708468099"
+              value="Hierarchical clustering builds a tree of nested clusters">Hierarchical clustering builds a tree of
+            nested clusters </label>
+          <label for="i44"><input type="radio" name="entry.708468099"
+              value="The partitioning method works by identifying the best divisions of clusters">The partitioning
+            method works by identifying the best divisions of clusters </label>
+          <label for="i47"><input type="radio" name="entry.708468099"
+              value="Hierarchical clustering combines">Hierarchical clustering combines the divisive (bottom-down) and
+            the agglomerative (top-up) together</label>
+          <label for="i50"><input type="radio" name="entry.708468099"
+              value="The partitioning method can be used to distinct cancer subtypes">The partitioning method can be
+            used to distinct cancer subtypes </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.1888940999" class="question_question">4. Which is not a programmatic method to determine the
+          optimal K in K-means clustering?
         </label>
-       
-        <label for="i15">
-          <input type="radio" id="i15" name="entry.761249406" value="Need to">Need to quantify the relatedness of data points
+        <div class="options">
+          <label for="i57"><input type="radio" name="entry.1888940999" value="Elbow method">Elbow method </label>
+          <label for="i60"><input type="radio" name="entry.1888940999" value="Silhouette method">Silhouette method
+          </label>
+          <label for="i63"><input type="radio" name="entry.1888940999" value="L1000">L1000 </label>
+          <label for="i66"><input type="radio" name="entry.1888940999" value="X-means clustering">X-means clustering
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label for="entry.1638178949" class="question_question">5. Choose the incorrect statement about limitations of
+          K-means clustering. </label>
+        <div class="options">
+          <label for="i73"><input type="radio" name="entry.1638178949" value="The shape of clusters can vary">The shape
+            of clusters can vary </label>
+          <label for="i76"><input type="radio" name="entry.1638178949" value="Difficulty of implementation"> Difficulty
+            of implementation</label>
+          <label for="i79"><input type="radio" name="entry.1638178949" value="The size of clusters can vary"> The size
+            of clusters can vary</label>
+          <label for="i82"><input type="radio" name="entry.1638178949" value="Data contains noise">Data contains noise
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.727933564" class="question_question">6. What is true about using the Leiden clustering
+          algorithm when compared to the Louvain clustering algorithm?</label>
+        <div class="options">
+          <label for="i89"><input type="radio" name="entry.727933564" value="Communities may">Communities may become
+            internally disconnected but remain as one community
+          </label>
+          <label for="i92"><input type="radio" name="entry.727933564" value="Takes longer">Takes longer to
+            compute</label>
+          <label for="i95"><input type="radio" name="entry.727933564" value="Starts by">Starts by finding core
+            points</label>
+          <label for="i98"><input type="radio" name="entry.727933564" value="Needs to">Needs to define the number of
+            clusters apriori based on users' needs </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.50494286" class="question_question">7. Which visualization shows joins where two clusters
+          merge and its height represents the distance between clusters.</label>
+
+        <div class="options">
+          <label for="i105"><input type="radio" name="entry.50494286" value="Heatmap">Heatmap </label>
+          <label for="i108"><input type="radio" name="entry.50494286" value="Dendrogram">Dendrogram</label>
+          <label for="i11"><input type="radio" name="entry.50494286" value="Volcano plot">Volcano plot</label>
+          <label for="i14"><input type="radio" name="entry.50494286" value="Clustergram">Clustergram</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="entry.224184375" class="question_question">8. What is the name of the linkage method used in
+          agglomerative clustering when the farthest distance between clusters is used as the linkage method?
         </label>
-       
-        <label for="i18">
-          
-          <input type="radio" id="i18" name="entry.761249406" value="To categorize">To categorize genes or proteins based on their physical location within the cell
-
-        </label>
+        <div class="options">
+          <label for="i121"><input type="radio" name="entry.224184375" value="Single-linkage">Single-linkage </label>
+          <label for="i124"><input type="radio" name="entry.224184375" value="Average-linkage">Average-linkage </label>
+          <label for="i127"><input type="radio" name="entry.224184375" value="Complete-linkage">Complete-linkage
+          </label>
+          <label for="i130"><input type="radio" name="entry.224184375" value="Absolute-linkage">Absolute-linkage
+          </label>
+        </div>
       </div>
-    </div>
 
-    <div class="question">
-      <label for="entry.1494109199" class = "question_question" >2. Which Machine Learning method does clustering analysis?</label>
-      <div class="options">
-        <label for="i25"><input type="radio" name="entry.1494109199" value="Unsupervised learning"> Unsupervised learning</label>
-        <label for="i28"><input type="radio" name="entry.1494109199" value="Semi-supervised learning"> Semi-supervised learning</label>
-        <label for="i31"><input type="radio" name="entry.1494109199" value="Reinforcement learning">Reinforcement learning </label>
-        <label for="i34"><input type="radio" name="entry.1494109199" value="Supervised learning">Supervised learning </label>
+      <div class="question">
+        <label for="entry.1499429502" class="question_question">9. Choose a wrong statement about the parameters needed
+          for DBSCAN. </label>
+        <div class="options">
+          <label for="i137"><input type="radio" name="entry.1499429502" value="epsilon indicates">ε (epsilon) indicates
+            a radius around each data point </label>
+          <label for="i140"><input type="radio" name="entry.1499429502" value="epsilon is ideally">ε (epsilon) is
+            ideally based on prior domain knowledge</label>
+          <label for="i143"><input type="radio" name="entry.1499429502" value="epsilon can be determined">ε (epsilon)
+            can be determined with a k-distance plot</label>
+          <label for="i146"><input type="radio" name="entry.1499429502" value="Minimum threshold">minPts: Minimum
+            threshold for the number of neighbors within a point’s radius</label>
+          <label for="i149"><input type="radio" name="entry.1499429502" value="Default of 4">minPts: Default of 4 works
+            for many two-dimensional datasets</label>
+          <label for="i152"><input type="radio" name="entry.1499429502" value="None of Above">None of Above</label>
+        </div>
       </div>
-    </div>
 
-    <div class="question">
-      <label for="entry.708468099" class = "question_question" >3. Choose the incorrect statement about hierarchical clustering and partitioning clustering.
-      </label>
-      <div class="options">
-        <label for="i41"><input type="radio" name="entry.708468099" value="Hierarchical clustering builds a tree of nested clusters">Hierarchical clustering builds a tree of nested clusters </label>
-        <label for="i44"><input type="radio" name="entry.708468099" value="The partitioning method works by identifying the best divisions of clusters">The partitioning method works by identifying the best divisions of clusters </label>
-        <label for="i47"><input type="radio" name="entry.708468099" value="Hierarchical clustering combines">Hierarchical clustering combines the divisive (bottom-down) and the agglomerative (top-up) together</label>
-        <label for="i50"><input type="radio" name="entry.708468099" value="The partitioning method can be used to distinct cancer subtypes">The partitioning method can be used to distinct cancer subtypes  </label>
+      <div class="question">
+        <label for="entry.452909550" class="question_question">10. Choose the algorithm that is explained in these
+          statements:</label>
+        <div class="question-statements">
+          <ul class="question-statements">
+            <li> A widely used method for identifying co-expressed gene modules</li>
+            <li> Starts with a gene-gene co-expression network</li>
+            <li> Identify initial gene modules (clusters) via a form of hierarchical clustering that accounts for shared
+              neighbors using a topological overlap measure</li>
+            <li> Eigengenes are used as a representative of gene expression profiles within a module</li>
+          </ul>
+        </div>
+        <div class="options">
+          <label for="i159"><input type="radio" name="entry.452909550" value="K-means clustering">K-means
+            clustering</label>
+          <label for="i162"><input type="radio" name="entry.452909550" value="DBSCAN">DBSCAN</label>
+          <label for="i165"><input type="radio" name="entry.452909550" value="Leiden clustering">Leiden clustering
+          </label>
+          <label for="i168"><input type="radio" name="entry.452909550" value="Hierarchical clustering">Hierarchical
+            clustering </label>
+          <label for="i171"><input type="radio" name="entry.452909550" value="WGCNA">WGCNA</label>
+        </div>
       </div>
-    </div>
-
-    <div class="question">
-      <label for="entry.1888940999" class = "question_question" >4. Which is not a programmatic method to determine the optimal K in K-means clustering?
-      </label>
-      <div class="options">
-        <label for="i57"><input type="radio" name="entry.1888940999" value="Elbow method">Elbow method </label>
-        <label for="i60"><input type="radio" name="entry.1888940999" value="Silhouette method">Silhouette method </label>
-        <label for="i63"><input type="radio" name="entry.1888940999" value="L1000">L1000 </label>
-        <label for="i66"><input type="radio" name="entry.1888940999" value="X-means clustering">X-means clustering </label>
-      </div>
-    </div>
-
-
-    <div class="question">
-      <label for="entry.1638178949" class = "question_question" >5. Choose the incorrect statement about limitations of K-means clustering.  </label>
-      <div class="options">
-        <label for="i73"><input type="radio" name="entry.1638178949" value="The shape of clusters can vary">The shape of clusters can vary </label>
-        <label for="i76"><input type="radio" name="entry.1638178949" value="Difficulty of implementation"> Difficulty of implementation</label>
-        <label for="i79"><input type="radio" name="entry.1638178949" value="The size of clusters can vary"> The size of clusters can vary</label>
-        <label for="i82"><input type="radio" name="entry.1638178949" value="Data contains noise">Data contains noise </label>
-      </div>
-    </div>
-
-    <div class="question">
-      <label for="entry.727933564" class = "question_question" >6. What is true about using the Leiden clustering algorithm when compared to the Louvain clustering algorithm?</label>
-      <div class="options">
-        <label for="i89"><input type="radio" name="entry.727933564" value="Communities may">Communities may become internally disconnected but remain as one community
-        </label>
-        <label for="i92"><input type="radio" name="entry.727933564" value="Takes longer">Takes longer to compute</label>
-        <label for="i95"><input type="radio" name="entry.727933564" value="Starts by">Starts by finding core points/label>
-        <label for="i98"><input type="radio" name="entry.727933564" value="Needs to">Needs to define the number of clusters apriori based on users' needs  </label>
-      </div>
-    </div>
-
-    <div class="question">
-      <label for="entry.50494286" class = "question_question" >7. Which visualization shows joins where two clusters merge and its height represents the distance between clusters.</label>
-
-      <div class="options">
-        <label for="i105"><input type="radio" name="entry.50494286" value="Heatmap">Heatmap </label>
-        <label for="i108"><input type="radio" name="entry.50494286" value="Dendrogram">Dendrogram</label>
-        <label for="i11"><input type="radio" name="entry.50494286" value="Volcano plot">Volcano plot</label>
-        <label for="i14"><input type="radio" name="entry.50494286" value="Clustergram">Clustergram</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <label for="entry.224184375" class = "question_question" >8. What is the name of the linkage method used in agglomerative clustering when the farthest distance between clusters is used as the linkage method? 
-        </label>
-      <div class="options">
-        <label for="i121"><input type="radio" name="entry.224184375" value="Single-linkage">Single-linkage </label>
-        <label for="i124"><input type="radio" name="entry.224184375" value="Average-linkage">Average-linkage </label>
-        <label for="i127"><input type="radio" name="entry.224184375" value="Complete-linkage">Complete-linkage </label>
-        <label for="i130"><input type="radio" name="entry.224184375" value="Absolute-linkage">Absolute-linkage </label>
-      </div>
-    </div>
-
-    <div class="question">
-      <label for="entry.1499429502" class = "question_question" >9. Choose a wrong statement about the parameters needed for DBSCAN.      </label>
-      <div class="options">
-        <label for="i137"><input type="radio" name="entry.1499429502" value="epsilon indicates">ε (epsilon) indicates a radius around each data point </label>
-        <label for="i140"><input type="radio" name="entry.1499429502" value="epsilon is ideally">ε (epsilon) is ideally based on prior domain knowledge</label>
-        <label for="i143"><input type="radio" name="entry.1499429502" value="epsilon can be determined">ε (epsilon) can be determined with a k-distance plot</label>
-        <label for="i146"><input type="radio" name="entry.1499429502" value="Minimum threshold">minPts: Minimum threshold for the number of neighbors within a point’s radius</label>
-        <label for="i149"><input type="radio" name="entry.1499429502" value="Default of 4">minPts: Default of 4 works for many two-dimensional datasets</label>
-        <label for="i152"><input type="radio" name="entry.1499429502" value="None of Above">None of Above</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <label for="entry.452909550" class = "question_question" >10. Choose the algorithm that is explained in these statements:</label>
-      <div class="question-statements">
-      <ul class="question-statements">
-        <li> A widely used method for identifying co-expressed gene modules</li>
-        <li> Starts with a gene-gene co-expression network</li>
-        <li> Identify initial gene modules (clusters) via a form of hierarchical clustering that accounts for shared neighbors using a topological overlap measure</li>
-        <li> Eigengenes are used as a representative of gene expression profiles within a module</li>
-      </ul>
-    </div>
-      <div class="options">
-        <label for="i159"><input type="radio" name="entry.452909550" value="K-means clustering">K-means clustering</label>
-        <label for="i162"><input type="radio" name="entry.452909550" value="DBSCAN">DBSCAN</label>
-        <label for="i165"><input type="radio" name="entry.452909550" value="Leiden clustering">Leiden clustering </label>
-        <label for="i168"><input type="radio" name="entry.452909550" value="Hierarchical clustering">Hierarchical clustering </label>
-        <label for="i171"><input type="radio" name="entry.452909550" value="WGCNA">WGCNA</label>
-      </div>
-    </div>
-  <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
-  </form>
-</div>
+      <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
+    </form>
+  </div>
 
 </body>
+
 </html>

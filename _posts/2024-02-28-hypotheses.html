@@ -1,0 +1,328 @@
+---
+layout: post
+title: "#4 Multiple Hypotheses Correction"
+date: 2024-02-27
+description: This is the quiz for the Multiple Hypotheses Correction class
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#4 Multiple Hypotheses Correction </title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSe6WPr9SI647xfVYD_SHao9IwuYvLuTzDSYPbwkTznLo9W_7w/formResponse?"
+
+    $('#quizForm').submit(function (event) {
+      event.preventDefault(); 
+      var data = {
+        "entry.1700547350": document.querySelector('input[name="entry.1700547350"]').value || "",
+        "entry.784732873": document.querySelector('input[name="entry.784732873"]:checked').value || "",
+        "entry.1250223287": document.querySelector('input[name="entry.1250223287"]:checked').value || "",
+        "entry.18491135": document.querySelector('input[name="entry.18491135"]:checked').value || "",
+        "entry.1664458886": document.querySelector('input[name="entry.1664458886"]:checked').value || "",
+        "entry.2087348529": document.querySelector('input[name="entry.2087348529"]:checked').value || "",
+        "entry.1825897651": document.querySelector('input[name="entry.1825897651"]:checked').value || "",
+        "entry.1115648688": document.querySelector('input[name="entry.1115648688"]:checked').value || "",
+        "entry.1425319942": document.querySelector('input[name="entry.1425319942"]:checked').value || "",
+        "entry.1162711090": document.querySelector('input[name="entry.1162711090"]:checked').value || "",
+        "entry.1153982229": document.querySelector('input[name="entry.1153982229"]:checked').value || "",
+      };
+
+
+      postToGoogle(formURL, data);
+      console.log('form submitted');
+      setTimeout(redirectToThankYou, 1000);
+     
+    });
+
+    function postToGoogle(googleURL, data) {
+      $.ajax({
+        url: googleURL,
+        data: data,
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+          0: function () {
+            
+          },
+          200: function () {
+           
+          }
+        }
+      });
+    }
+    function redirectToThankYou() {
+      console.log("redirect")
+      window.location.href = "/lecture-quiz/thankyou/";
+    }
+
+  });
+</script>
+
+
+<body>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  <div class="container">
+    <form id="quizForm">
+      <div class="question">
+
+        <label class="question_question">Name*</label> <input class="w3-input" type="text" name="entry.1700547350"
+          required>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.784732873" required>1. Select an incorrect statement about the null hypothesis. 
+
+        </label>
+        <div class="options">
+
+
+          <label for="i9"><input type="radio" id="i9" name="entry.784732873" value="asserts">The null hypothesis asserts that there are no significant differences
+          </label>
+
+          <label for="i12"><input type="radio" id="i12" name="entry.784732873" value="designed">The null hypothesis is designed to be the rejected claim
+          </label>
+
+          <label for="i15"><input type="radio" id="i15" name="entry.784732873" value="quantify">The null hypothesis is to quantify how strongly our observed data supports the claim
+          </label>
+
+          <label for="i18"><input type="radio" id="i18" name="entry.784732873" value="essentially">We are essentially trying to see if our data disprove the null hypothesis
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1250223287" required>2. Select the model that is explained in the following statements:
+
+        </label>
+        <div class="question-statements">
+          <ul class="question-statements">
+            <li> The shape of the data typically follows a negative binomial distribution</li>
+            <li> The standard error estimate can be decreased by increasing the sample size</li>
+            <li> The model’s outcome variable Y is dependent on some linear combination of explanatory variables</li>
+          </ul>
+        </div>
+        <div class="options">
+
+
+          <label for="i25"><input type="radio" id="i9" name="entry.1250223287" value="ANOVA model">ANOVA model
+          </label>
+
+          <label for="i28"><input type="radio" id="i12" name="entry.1250223287" value="Classification model">Classification model
+          </label>
+
+          <label for="i31"><input type="radio" id="i15" name="entry.1250223287" value="Generalized linear model">Generalized linear model
+          </label>
+
+          <label for="i34"><input type="radio" id="i18" name="entry.1250223287" value="Dynamical PDE model">Dynamical PDE model
+          </label>
+        </div>
+      </div>
+      
+
+      <div class="question">
+        <label class="question_question" for="entry.18491135" required>3. Select a correct statement about the simulating outcome probability
+
+
+        </label>
+        <div class="options">
+
+
+          <label for="i41"><input type="radio" id="i9" name="entry.18491135" value="make">We don’t need to make any assumptions about the outcome distribution 
+          </label>
+
+          <label for="i43"><input type="radio" id="i12" name="entry.18491135" value="know">We don’t need to know where the data is coming from
+          </label>
+
+          <label for="i47"><input type="radio" id="i15" name="entry.18491135" value="repeat">We must repeat at least 10000 randomized simulations to have sufficient information about the frequencies of outcomes
+          </label>
+
+          <label for="i50"><input type="radio" id="i18" name="entry.18491135" value="Simulating">Simulating the outcome probability can be computationally expensive
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1664458886" required>4. Select an incorrect statement about permutation testing.
+
+        </label>
+        <div class="options">
+
+
+          <label for="i57"><input type="radio" id="i9" name="entry.1664458886" value="Also">Also called shuffle testing
+          </label>
+
+          <label for="i60"><input type="radio" id="i12" name="entry.1664458886" value="For">For N permutations, the p-value can only be as small as 1/N
+          </label>
+
+          <label for="i63"><input type="radio" id="i15" name="entry.1664458886" value="Able">Able to estimate the P value more accurately
+          </label>
+
+          <label for="i66"><input type="radio" id="i18" name="entry.1664458886" value="Can">Can be used to test a large number of hypotheses all at once
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.2087348529" required>5. Select the term explained in the statement below: 
+
+
+
+        </label>
+        <div class="question-statements">
+          <ul class="question-statements">
+            <li> The probability of making at least one type I error when performing multiple hypotheses tests</li>
+            </ul>
+            </div>
+        <div class="options">
+
+
+          <label for="i73"><input type="radio" id="i9" name="entry.2087348529" value="False-negatives">False-negatives
+          </label>
+
+          <label for="i78"><input type="radio" id="i12" name="entry.2087348529" value="True-negatives">True-negatives
+          </label>
+
+          <label for="i81"><input type="radio" id="i15" name="entry.2087348529" value="The Bonferroni correction">The Bonferroni correction
+          </label>
+
+          <label for="i84"><input type="radio" id="i18" name="entry.2087348529" value="Familywise error rate">Familywise error rate
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1825897651" required>6. Select the incorrect statement about multiple comparisons.
+
+        </label>
+       
+        <div class="options">
+
+
+          <label for="i91"><input type="radio" id="i9" name="entry.1825897651" value="Corrections">Corrections should be made to the significance level to protect against error rate inflation	
+          </label>
+
+          <label for="i94"><input type="radio" id="i12" name="entry.1825897651" value="hypotheses">The hypotheses will be tested in a sequence
+          </label>
+
+          <label for="i97"><input type="radio" id="i15" name="entry.1825897651" value="Multiple">Multiple hypothesis tests are commonly conducted in the field of Bioinformatics
+          </label>
+
+          <label for="i100"><input type="radio" id="i18" name="entry.1825897651" value="Benjamini">Benjamini-Hochberg correction can be used for controlling the false discovery rate
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1115648688" required>7. A researcher wants to calculate the False Discovery Rate (FDR) from the below table. 
+
+        </label>
+        <div>
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/hypotheses-7.png?raw=true">
+        </div>
+        <div class="options">
+
+
+          <label for="i107"><input type="radio" id="i9" name="entry.1115648688" value="5.2">5.2%
+          </label>
+
+          <label for="i110"><input type="radio" id="i12" name="entry.1115648688" value="15.7">15.7%
+          </label>
+
+          <label for="i113"><input type="radio" id="i15" name="entry.1115648688" value="25">25%
+          </label>
+
+          <label for="i116"><input type="radio" id="i18" name="entry.1115648688" value="33.3">33.3%
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1425319942" required>8. Which multiple hypotheses correction is more stringent?
+
+        </label>
+        <div class="options">
+
+
+          <label for="i123"><input type="radio" id="i9" name="entry.1425319942" value="Bonferroni is more stringent that BH">Bonferroni is more stringent that BH
+          </label>
+
+          <label for="i127"><input type="radio" id="i12" name="entry.1425319942" value="BH is more stringent than Bonferroni">BH is more stringent than Bonferroni
+          </label>
+
+          <label for="i130"><input type="radio" id="i15" name="entry.1425319942" value="Slidek is more stringent than Bonferroni">Slidek is more stringent than Bonferroni
+          </label>
+
+          <label for="i133"><input type="radio" id="i18" name="entry.1425319942" value="BH is more stringent than Slidek">BH is more stringent than Slidek
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1162711090" required>9. Select the correct statement on Sidak correction.
+
+        </label>
+        <div class="options">
+
+
+          <label for="i140"><input type="radio" id="i9" name="entry.1162711090" value="dependent">It assumes the tests are dependent
+          </label>
+
+          <label for="i143"><input type="radio" id="i12" name="entry.1162711090" value="familywise error rate">It is used to control the familywise error rate
+          </label>
+
+          <label for="i146"><input type="radio" id="i15" name="entry.1162711090" value="false discovery rate">It is used to control the false discovery rate
+          </label>
+
+          <label for="i149"><input type="radio" id="i18" name="entry.1162711090" value="relationships">It describes the relationships between dependent variables and explanatory variables
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1153982229" required>10. Which is not true about differential gene expression analysis?
+
+        </label>
+        <div class="options">
+
+
+          <label for="156"><input type="radio" id="i9" name="entry.1153982229" value="RNA-Seq data">We can use it to analyze RNA-Seq data
+          </label>
+
+          <label for="i159"><input type="radio" id="i12" name="entry.1153982229" value="compare">It can be used to compare data between mutant samples and control samples
+          </label>
+
+          <label for="i162"><input type="radio" id="i15" name="entry.1153982229" value="labs">When the same experiment is performed by different labs, the method is used to 
+          </label>
+
+          <label for="i165"><input type="radio" id="i18" name="entry.1153982229" value="mathematical">A mathematical model (such as y = f(x)) can be utilized to describe the relationship between the gene expression value and the experimental conditions
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
+    </form>
+  </div>
+
+
+
+</body>
+
+</html>

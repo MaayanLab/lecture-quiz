@@ -1,0 +1,330 @@
+---
+layout: post
+title: "#5 Differential Expression Analysis"
+date: 2024-03-05
+description: This is the quiz for the Differential Expression Analysis class
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#5 Differential Expression Analysis </title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdesbp54qRHI0_TsL2j-nA-8X3p8RzeV_BizWHCG-62wGlSGw/formResponse?"
+
+    $('#quizForm').submit(function (event) {
+      event.preventDefault(); 
+      var data = {
+        "entry.1700547350": document.querySelector('input[name="entry.1700547350"]').value || "",
+        "entry.784732873": document.querySelector('input[name="entry.784732873"]:checked').value || "",
+        "entry.1250223287": document.querySelector('input[name="entry.1250223287"]:checked').value || "",
+        "entry.18491135": document.querySelector('input[name="entry.18491135"]:checked').value || "",
+        "entry.1664458886": document.querySelector('input[name="entry.1664458886"]:checked').value || "",
+        "entry.2087348529": document.querySelector('input[name="entry.2087348529"]:checked').value || "",
+        "entry.1825897651": document.querySelector('input[name="entry.1825897651"]:checked').value || "",
+        "entry.1115648688": document.querySelector('input[name="entry.1115648688"]:checked').value || "",
+        "entry.1425319942": document.querySelector('input[name="entry.1425319942"]:checked').value || "",
+        "entry.1162711090": document.querySelector('input[name="entry.1162711090"]:checked').value || "",
+        "entry.1153982229": document.querySelector('input[name="entry.1153982229"]:checked').value || "",
+      };
+
+
+      postToGoogle(formURL, data);
+      console.log('form submitted');
+      setTimeout(redirectToThankYou, 1000);
+     
+    });
+
+    function postToGoogle(googleURL, data) {
+      $.ajax({
+        url: googleURL,
+        data: data,
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+          0: function () {
+            
+          },
+          200: function () {
+           
+          }
+        }
+      });
+    }
+    function redirectToThankYou() {
+      console.log("redirect")
+      window.location.href = "/lecture-quiz/thankyou/";
+    }
+
+  });
+</script>
+
+
+<body>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  <div class="container">
+    <form id="quizForm">
+      <div class="question">
+
+        <label class="question_question">Name*</label> <input class="w3-input" type="text" name="entry.1700547350"
+          required>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.784732873" required>1. Select the statement that best describes the goal of differential gene expression analysis:
+
+        </label>
+        <div class="options">
+
+
+          <label for="i9"><input type="radio" id="i9" name="entry.784732873" value="quantify">To quantify gene expression levels
+          </label>
+
+          <label for="i12"><input type="radio" id="i12" name="entry.784732873" value="compare">To compare gene expression profiles between different experimental conditions
+          </label>
+
+          <label for="i15"><input type="radio" id="i15" name="entry.784732873" value="identify">To identify statistically significant metabolites
+          </label>
+
+          <label for="i18"><input type="radio" id="i18" name="entry.784732873" value="visualize">To visualize gene expression data
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1250223287" required>2. Which aspect is not used for count normalization of RNA-seq data?
+
+        </label>
+       
+        <div class="options">
+
+
+          <label for="i25"><input type="radio" id="i9" name="entry.1250223287" value="Gene function">Gene function
+          </label>
+
+          <label for="i28"><input type="radio" id="i12" name="entry.1250223287" value="Sequencing depth">Sequencing depth
+          </label>
+
+          <label for="i31"><input type="radio" id="i15" name="entry.1250223287" value="Length of the gene">Length of the gene
+          </label>
+
+          <label for="i34"><input type="radio" id="i18" name="entry.1250223287" value="RNA composition across samples">RNA composition across samples
+          </label>
+        </div>
+      </div>
+      
+
+      <div class="question">
+        <label class="question_question" for="entry.18491135" required>3. What is the correct order of DGE Analysis Workflow followed by Read Quality Control?
+
+
+
+        </label>
+        <div class="question-statements">
+        <ul class="question-statements">
+          <li> A: Normalize the data          </li>
+          <li> B: Perform the Alignment: assign reads to genes or transcripts           </li>
+          <li> C: Identify differentially expressed genes between multiple conditions </li>
+          <li> D: Quantify gene or transcript counts </li>
+        </ul>
+      </div>
+        <div class="options">
+
+
+          <label for="i41"><input type="radio" id="i9" name="entry.18491135" value="A-B-C-D">A-B-C-D
+          </label>
+
+          <label for="i43"><input type="radio" id="i12" name="entry.18491135" value="A-D-B-C">A-D-B-C
+          </label>
+
+          <label for="i47"><input type="radio" id="i15" name="entry.18491135" value="B-D-A-C">B-D-A-C
+          </label>
+
+          <label for="i50"><input type="radio" id="i18" name="entry.18491135" value="C-A-B-D">C-A-B-D
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1664458886" required>4. Which distribution type does DESeq2 assume for gene counts?
+
+
+        </label>
+        <div class="options">
+
+
+          <label for="i57"><input type="radio" id="i9" name="entry.1664458886" value="Normal distribution">Normal distribution
+          </label>
+
+          <label for="i60"><input type="radio" id="i12" name="entry.1664458886" value="Poisson distribution">Poisson distribution
+          </label>
+
+          <label for="i63"><input type="radio" id="i15" name="entry.1664458886" value="Bimodal distribution">Bimodal distribution
+          </label>
+
+          <label for="i66"><input type="radio" id="i18" name="entry.1664458886" value="Negative binomial distribution">Negative binomial distribution
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.2087348529" required>5. Select a method that DESeq2 uses to control the false discovery rate.
+
+
+
+
+        </label>
+      
+        <div class="options">
+
+
+          <label for="i73"><input type="radio" id="i9" name="entry.2087348529" value="Benjamini-Hochberg correction">Benjamini-Hochberg correction
+
+          </label>
+
+          <label for="i78"><input type="radio" id="i12" name="entry.2087348529" value="Bonferroni correction">Bonferroni correction
+          </label>
+
+          <label for="i81"><input type="radio" id="i15" name="entry.2087348529" value="Sidak correction">Sidak correction
+          </label>
+
+          <label for="i84"><input type="radio" id="i18" name="entry.2087348529" value="Wald test">Wald test
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1825897651" required>6. Select an <u>incorrect</u> statement about shrinking dispersion estimates by DESeq2.
+
+
+        </label>
+       
+        <div class="options">
+
+
+          <label for="i91"><input type="radio" id="i9" name="entry.1825897651" value="Needs">Needs to estimate the dispersion accurately under small sample size constraints	
+
+          <label for="i94"><input type="radio" id="i12" name="entry.1825897651" value="Assuming">Assuming genes with similar expression have similar dispersion, the prior means are obtained by fitting a mean-dispersion trend to the observed data
+          </label>
+
+          <label for="i97"><input type="radio" id="i15" name="entry.1825897651" value="Unmapped">Unmapped reads are typically assumed to follow a positive binomial distribution
+
+          </label>
+
+          <label for="i100"><input type="radio" id="i18" name="entry.1825897651" value="Shrinkage">Shrinkage is not applied to outliers 
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1115648688" required>7. Which analysis method is used to transform RNA-seq count data to fit limma’s distribution assumptions for microarrays?
+
+        </label>
+       
+        <div class="options">
+
+
+          <label for="i107"><input type="radio" id="i9" name="entry.1115648688" value="EdgeR">EdgeR
+          </label>
+
+          <label for="i110"><input type="radio" id="i12" name="entry.1115648688" value="TPM">TPM
+          </label>
+
+          <label for="i113"><input type="radio" id="i15" name="entry.1115648688" value="RPKM">RPKM
+          </label>
+
+          <label for="i116"><input type="radio" id="i18" name="entry.1115648688" value="Voom">Voom
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1425319942" required>8. Which method the Characteristic Direction method is using to find the separating hyperplane in gene expression space?
+
+        </label>
+        <div class="options">
+
+
+          <label for="i123"><input type="radio" id="i9" name="entry.1425319942" value="LDA">Linear discriminant analysis (LDA)
+          </label>
+
+          <label for="i127"><input type="radio" id="i12" name="entry.1425319942" value="UMAP">Uniform Manifold Approximation and Projection (UMAP)
+          </label>
+
+          <label for="i130"><input type="radio" id="i15" name="entry.1425319942" value="t-SNE">t-distributed Stochastic Neighbor Embedding (t-SNE)
+          </label>
+
+          <label for="i133"><input type="radio" id="i18" name="entry.1425319942" value="AUC">The area under the curve (AUC)
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1162711090" required>9. What are the typical axes in MA plots and volcano plots when visualizing differential gene expression? 
+
+
+        </label>
+        <div class="options">
+
+
+          <label for="i140"><input type="radio" id="i9" name="entry.1162711090" value="ylog xfold">MA plots: y- log ratio,  x- mean average; volcano plots: y- -log(p); x-fold change 
+          </label>
+
+          <label for="i143"><input type="radio" id="i12" name="entry.1162711090" value="ymean xfold">MA plots: y-mean average, x- log ratio; volcano plots: y- -log(p); x-fold change
+          </label>
+
+          <label for="i146"><input type="radio" id="i15" name="entry.1162711090" value="ylog xmean">MA plots: y- log ratio, x-fold change; volcano plots: y- -log(p); x-mean average 
+          </label>
+
+          <label for="i149"><input type="radio" id="i18" name="entry.1162711090" value="ylogp xfold">MA plots: y- -log(p), x- mean average; volcano plots: y- log ratio; x-fold change
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1153982229" required>10. Which method is used to aggregate samples in single-cell RNA-seq data analysis?
+
+
+        </label>
+        <div class="options">
+
+
+          <label for="156"><input type="radio" id="i9" name="entry.1153982229" value="NEBULA">NEgative Binomial mixed model Using a Large-sample Approximation (NEBULA)
+          </label>
+
+          <label for="i159"><input type="radio" id="i12" name="entry.1153982229" value="Pseudo-bulking">Pseudo-bulking
+          </label>
+
+          <label for="i162"><input type="radio" id="i15" name="entry.1153982229" value="TMB">Template Model Builder (TMB)
+          </label>
+
+          <label for="i165"><input type="radio" id="i18" name="entry.1153982229" value="GLMMs">Generalized Linear Mixed Models (GLMMs)
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
+    </form>
+  </div>
+
+
+
+</body>
+
+</html>

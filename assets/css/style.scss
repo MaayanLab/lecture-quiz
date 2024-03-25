@@ -74,13 +74,13 @@ body {
 	text-align: center;
   }
   .question {
-	margin: 30px 0px;
+	margin: 50px 0px 30px;
   }
 
   .question_question {
-	margin: 5px 0px;
-	font-size:20px;
-	font-weight:bold;
+	margin: 5px 0px 5px;
+	font-size:18px;
+	font-weight:550;
   }
 
   .options {
@@ -91,8 +91,8 @@ body {
   .options label {
 
 	display: block;
-	margin: 15px 0px;
-	font-size: 18px;
+	margin: 15px 10px;
+	font-size: 16px;
 	
   }
   .options input[type="radio"] {
@@ -151,3 +151,25 @@ body {
 	font-size: 16px;
   }
   
+  ul.answer {
+	list-style-type: none;
+	counter-reset: list-counter; 
+	margin: 0px 10px;
+	width: 100%;
+	font-size: 18px;
+  }
+
+
+  li.answer {
+	counter-increment: list-counter; 
+  }
+
+
+  li.answer::before {
+	content: counter(list-counter) ") "; 
+	font-weight: bold;
+  }
+
+  .correct{
+	color: blue;
+  }

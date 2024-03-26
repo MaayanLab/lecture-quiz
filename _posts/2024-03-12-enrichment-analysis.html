@@ -1,0 +1,350 @@
+---
+layout: post
+title: "#6 Enrichment Analysis"
+date: 2024-03-25
+description: This is the quiz for the Enrichment Analysis class
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#6 Enrichment Analysis </title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfcTvS6JabeFf0M2mDJ46pD1KdV7EqgGoQL_432Bp9Auv8gcQ/formResponse?"
+
+    $('#quizForm').submit(function (event) {
+      event.preventDefault(); 
+      var data = {
+        "entry.1700547350": document.querySelector('input[name="entry.1700547350"]').value || "", 
+        "entry.784732873": document.querySelector('input[name="entry.784732873"]:checked').value || "",
+        "entry.1250223287": document.querySelector('input[name="entry.1250223287"]:checked').value || "",
+        "entry.18491135": document.querySelector('input[name="entry.18491135"]:checked').value || "",
+        "entry.1664458886": document.querySelector('input[name="entry.1664458886"]:checked').value || "",
+        "entry.2087348529": document.querySelector('input[name="entry.2087348529"]:checked').value || "",
+        "entry.1825897651": document.querySelector('input[name="entry.1825897651"]:checked').value || "",
+        "entry.1115648688": document.querySelector('input[name="entry.1115648688"]:checked').value || "",
+        "entry.1425319942": document.querySelector('input[name="entry.1425319942"]:checked').value || "",
+        "entry.1162711090": document.querySelector('input[name="entry.1162711090"]:checked').value || "",
+        "entry.1153982229": document.querySelector('input[name="entry.1153982229"]:checked').value || "",
+      };
+
+
+      postToGoogle(formURL, data);
+      console.log('form submitted');
+      setTimeout(redirectToThankYou, 1000);
+     
+    });
+
+    function postToGoogle(googleURL, data) {
+      $.ajax({
+        url: googleURL,
+        data: data,
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+          0: function () {
+            
+          },
+          200: function () {
+           
+          }
+        }
+      });
+    }
+    function redirectToThankYou() {
+      console.log("redirect")
+      window.location.href = "/lecture-quiz/thankyou/";
+    }
+
+  });
+</script>
+
+
+<body>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  <div class="container">
+    <form id="quizForm">
+      <div class="question">
+
+        <label class="question_question">Name*</label> <input class="w3-input" type="text" name="entry.1700547350"
+          required>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.784732873" required>1. On the <a href="https://www.gsea-msigdb.org/gsea/index.jsp", target="_blank">GSEA</a> website’s  Molecular Signatures Database (MSigDB) within human collections, how many <i>C2: curated gene sets</i> are available?
+
+        </label>
+        <div class="options">
+
+
+          <label for="i9"><input type="radio" id="i9" name="entry.784732873" value="50">50
+          </label>
+
+          <label for="i12"><input type="radio" id="i12" name="entry.784732873" value="301">301
+          </label>
+
+          <label for="i15"><input type="radio" id="i15" name="entry.784732873" value="7233">7,233
+            </label>
+
+
+          <label for="i18"><input type="radio" id="i18" name="entry.784732873" value="16008">16,008
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1250223287" required>2. Among the 226 gene-set libraries provided by <a href="https://maayanlab.cloud/Enrichr/" target="_blank">Enrichr</a>, which library has the widest range of gene coverage?
+        </label>
+       
+        <div class="options">
+
+
+          <label for="i25"><input type="radio" id="i9" name="entry.1250223287" value="ChEA_2022">ChEA_2022
+          </label>
+
+          <label for="i28"><input type="radio" id="i12" name="entry.1250223287" value="LINCS_L1000_Chem_Pert_up">LINCS_L1000_Chem_Pert_up
+          </label>
+
+          <label for="i31"><input type="radio" id="i15" name="entry.1250223287" value="Epigenomics_Roadmap_HM_ChIP-seq">Epigenomics_Roadmap_HM_ChIP-seq
+          </label>
+
+          <label for="i34"><input type="radio" id="i18" name="entry.1250223287" value="Enrichr_Users_Contributed_Lists_2020">Enrichr_Users_Contributed_Lists_2020
+          </label>
+        </div>
+      </div>
+      
+
+      <div class="question">
+        <label class="question_question" for="entry.18491135" required> 3. When performing enrichment analysis by clicking on the “breast cancer” button on the <a href="https://maayanlab.cloud/Enrichr/" target="_blank">Enrichr</a> interface, while keeping all the default settings, when looking at the ARCHS4 TFs co-expression results, which transcription factor has the lowest p-value? Note: Gene symbols will be added by Enrichr to the input box in a few seconds after you click on the breast cancer button.
+
+
+        </label>
+        <div>
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/enrichment-3.png?raw=true">
+        </div>
+      
+        <div class="options">
+
+
+          <label for="i41"><input type="radio" id="i9" name="entry.18491135" value="ATF3">ATF3
+          </label>
+
+          <label for="i43"><input type="radio" id="i12" name="entry.18491135" value="HIF1A">HIF1A
+          </label>
+
+          <label for="i47"><input type="radio" id="i15" name="entry.18491135" value="NFE2L2">NFE2L2
+          </label>
+
+          <label for="i50"><input type="radio" id="i18" name="entry.18491135" value="TFAP2A">TFAP2A
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1664458886" required>4. Choose the term that best fits the analysis performed.
+
+        </label>
+
+
+        <div style="text-align: center;">
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/enrichment-4.png?raw=true"  style="width: 90%;">
+        </div>
+        <div class="options">
+
+
+          <label for="i57"><input type="radio" id="i9" name="entry.1664458886" value="Dimensionality reduction">Dimensionality reduction
+          </label>
+
+          <label for="i60"><input type="radio" id="i12" name="entry.1664458886" value="Differential expression analysis">Differential expression analysis 
+          </label>
+
+          <label for="i63"><input type="radio" id="i15" name="entry.1664458886" value="Clustering analysis">Clustering analysis
+          </label>
+
+          <label for="i66"><input type="radio" id="i18" name="entry.1664458886" value="Enrichment analysis">Enrichment analysis
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.2087348529" required>5. Which resources can be used as a source for creating gene set libraries?
+
+
+
+        </label>
+        <div>
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/enrichment-5.png?raw=true">
+        </div>
+      
+      
+        <div class="options">
+
+
+          <label for="i73"><input type="radio" id="i9" name="entry.2087348529" value="A and B">A and B
+
+          </label>
+
+          <label for="i78"><input type="radio" id="i12" name="entry.2087348529" value="A and D">A and D
+          </label>
+
+          <label for="i81"><input type="radio" id="i15" name="entry.2087348529" value="B and C">B and C
+          </label>
+
+          <label for="i84"><input type="radio" id="i18" name="entry.2087348529" value="All of them">All of them
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1825897651" required>6.  Which statement is most true about the p-value when performing enrichment analysis with the Fisher Exact test for Pathway A and the input gene set assuming a background of 20,000 genes?
+
+
+        </label>
+        <div style="text-align: center;">
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/enrichment-6.png?raw=true" style="width: 40%;">
+        </div>
+        <div class="options">
+
+
+          <label for="i91"><input type="radio" id="i9" name="entry.1825897651" value="P < 0.0001">P < 0.0001
+
+            </label>
+
+          <label for="i94"><input type="radio" id="i12" name="entry.1825897651" value="P < 0.001">P < 0.001
+          </label>
+
+          <label for="i97"><input type="radio" id="i15" name="entry.1825897651" value="P < 0.01">P < 0.01
+
+          </label>
+
+          <label for="i100"><input type="radio" id="i18" name="entry.1825897651" value="All statements are true">All statements are true
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1115648688" required>7. Select the incorrect explanation about the peak highlighted in the red circle. 
+
+
+        </label>
+
+        <div style="text-align: center;">
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/enrichment-7.png?raw=true" style="width: 60%;">
+        </div>
+       
+        <div class="options">
+
+
+          <label for="i107"><input type="radio" id="i9" name="entry.1115648688" value="Gaussian running sum">Gaussian running sum
+          </label>
+
+          <label for="i110"><input type="radio" id="i12" name="entry.1115648688" value="Enrichment score">Enrichment score
+          </label>
+
+          <label for="i113"><input type="radio" id="i15" name="entry.1115648688" value="Maximum displacement from zero">Maximum displacement from zero
+          </label>
+
+          <label for="i116"><input type="radio" id="i18" name="entry.1115648688" value="The largest deviation from the baseline">The largest deviation from the baseline
+          </label>
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1425319942" required>8. Which is the correct statement about the formula below in Gene Set Enrichment Analysis (GSEA)?
+
+        </label>
+
+        <div style="text-align: center;">
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/enrichment-8.png?raw=true" style="width: 70%;">
+        </div>
+        <div class="options">
+
+
+          <label for="i123"><input type="radio" id="i9" name="entry.1425319942" value="It is the amount to increment the walk when the gene is in the set">It is the amount to increment the walk when the gene is in the set
+
+          </label>
+
+          <label for="i127"><input type="radio" id="i12" name="entry.1425319942" value="It is the amount to decrement the walk when the gene is in the set">It is the amount to decrement the walk when the gene is in the set
+
+          </label>
+
+          <label for="i130"><input type="radio" id="i15" name="entry.1425319942" value="It is the wrong formula, G should be replaced by N">It is the wrong formula, G should be replaced by N
+          </label>
+
+          <label for="i133"><input type="radio" id="i18" name="entry.1425319942" value="It is the amount to increment the walk when the gene is NOT in the set">It is the amount to increment the walk when the gene is NOT in the set
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1162711090" required>9. Select the most relevant shape of the distribution graph that the displacement in a random walk typically follows.
+
+
+        </label>
+        <div style="text-align: center;">
+          <img src="https://github.com/MaayanLab/lecture-quiz/blob/main/assets/img/enrichment-9.png?raw=true"  style="width: 90%;">
+        </div>
+
+        <div class="options">
+
+
+          <label for="i140"><input type="radio" id="i9" name="entry.1162711090" value="A">A
+          </label>
+
+          <label for="i143"><input type="radio" id="i12" name="entry.1162711090" value="B">B
+          </label>
+
+          <label for="i146"><input type="radio" id="i15" name="entry.1162711090" value="C">C
+          </label>
+
+          <label for="i149"><input type="radio" id="i18" name="entry.1162711090" value="D">D
+        </div>
+      </div>
+
+
+      <div class="question">
+        <label class="question_question" for="entry.1153982229" required>10. You are standing in front of Mount Sinai on Madison Avenue. You have a quarter coin in your hand that you can toss. Every time when tossing the coin you take one step north (towards Harlem) if you get “heads” from the toss, or if you get “tail” you make a step south (towards Midtown). Each step that you take is about one foot. What is your most likely position after taking 10,000 tosses/steps? 
+
+        </label>
+    
+        <div class="options">
+
+
+          <label for="156"><input type="radio" id="i9" name="entry.1153982229" value="It is not possible to guess">It is not possible to guess
+          </label>
+
+          <label for="i159"><input type="radio" id="i12" name="entry.1153982229" value="100 feet toward Midtown">100 feet toward Midtown
+          </label>
+
+          <label for="i162"><input type="radio" id="i15" name="entry.1153982229" value="100 feet toward Harlem">100 feet toward Harlem
+          </label>
+
+          <label for="i165"><input type="radio" id="i18" name="entry.1153982229" value="Still be at the same spot in front of Mount Sinai">Still be at the same spot in front of Mount Sinai
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
+    </form>
+  </div>
+
+
+
+</body>
+
+</html>
